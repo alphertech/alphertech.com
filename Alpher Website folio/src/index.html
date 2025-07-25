@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="GridArt_20250330_021838519.png">
+    <title>Alpher</title>
+</head>
+
+<body>
+    <header>
+        <h1>Alpher</h1>
+        <!-- Place inside your header, before or after <nav> -->
+        <button class="hamburger" aria-label="Open navigation" style="color: aliceblue;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contacts</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Hello World!</h2>
+            <h3>Welcome to Alpher Technologies and Laboratories Uganda</h3>
+            <p>Empowering Brands Through Technology.<br>
+                We build stunning websites, powerful apps, creative designs, and scalable digital solutions to help your
+                business grow.
+            </p>
+            <div class="home_info">
+                <caption>[Let’s Work Together] </caption>
+                <form>
+                    <input type="text" name="feedback" placeholder="How can we help you today!">
+                    <button id="send">SEND MESSAGE</button>
+                    <button><a href="portfolio.html">SEE PORTFOLIO</a></button>
+                </form>
+            </div>
+            <h2>Developer's Message</h2>
+            <p>
+                It has been nice to see you
+                visit us. There must be something
+                crucial you feel like telling us.
+
+                Feel free to post it in the above
+                section. <br><b>We are ready to hear from you.</b>
+            </p>
+            <hr>
+        </section>
+
+        <section>
+            <h2>Why Choose Alpher</h2>
+            <p>Expert Team of Designers & Developers<br>
+                Tailored Digital Solutions<br>
+                Affordable Pricing & Transparent Process<br>
+                Reliable Support & Maintenance
+            </p>
+            <div class="frontpage">
+                <caption>Our Services at a Glance</caption>
+                <pre>
+1   2   3   4   5   6   7   8   9   10  A-Z
+                </pre>
+                <menu>
+                    <li>Custom Website Development</li>
+                    <li>Mobile App Development</li>
+                    <li>Branding & Logo Design</li>
+                    <li>Printing</li>
+                    <li>Digital Research Point</li>
+                    <li>ISP POINT</li>
+                    <button><a href="services.html">[EXPLORE ALL SERVICES]</a></button>
+                </menu>
+            </div>
+            <p>Offering the best is what we are!</p>
+        </section>
+    </main>
+    <blockquote>The future is now</blockquote>
+
+    <footer>
+        <p>&copy; 2025 Alpher Websites. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

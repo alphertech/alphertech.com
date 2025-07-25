@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Our Services</title>
+</head>
+
+<body>
+    <header>
+        <h1>Alpher</h1>
+        <!-- Place inside your header, before or after <nav> -->
+        <button class="hamburger" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contacts</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Custom Website Development</h2>
+            <p>We design and develop high-performance, mobile-friendly websites tailored to your goals.</p>
+            <ul>
+                <li>Custom Website Development</li>
+                <li>E-commerce Development</li>
+                <li>CMS Integration </li>
+                <li> Website Redesign</li>
+                <li>SEO Optimization</li>
+            </ul>
+            <img src="web.jpg">
+
+
+        </section>
+        <section>
+            <h2>Mobile App Development</h2>
+            <p>Build powerful mobile apps for Android, iOS, or both—designed with clean UI and smooth functionality.
+            </p>
+            <ul>
+                <li>Native Android & iOS Apps</li>
+                <li>Cross-platform Development</li>
+                <li>UI/UX Design</li>
+                <li>App Maintenance & Updates</li>
+            </ul>
+            <img src="apk.jpg">
+        </section>
+        <section>
+            <h2>Branding & Logo Design</h2>
+            <p>Bring your brand to life with eye-catching visuals that connect with your audience.</p>
+            <ul>
+                <li>Logo Design</li>
+                <li>Branding Packages</li>
+                <li>Social Media Graphics</li>
+                <li>Flyers, Brochures & Posters</li>
+                <li>Website Banners & Icons</li>
+            </ul>
+            <img src="graphics.jpg">
+        </section>
+    </main>
+    <article>
+        <p>At Alpher, we offer a comprehensive range of services designed to help businesses like yours succeed
+            in the digital age. Our team of expert developers, designers, and strategists is dedicated to delivering
+            high-quality solutions that meet the unique needs of our clients.
+        </p>
+        <h2>More About Us</h2>
+        <p>Creative & Professional Team
+
+            Fast Turnaround & Quality Work
+
+            Affordable & Scalable Solutions
+
+            Ongoing Support & Maintenance<br />
+            <hr>
+            Ready to start your project?
+            Let’s bring your vision to life.
+            Contact us today to get a free quote or consultation.
+        </p>
+        <pre>
+
+
+
+
+
+        </pre>
+    </article>
+    <footer>
+        <p>&copy; 2025 Alpher Websites. All rights reserved.</p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

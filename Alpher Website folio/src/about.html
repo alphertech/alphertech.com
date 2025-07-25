@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>About Us</title>
+</head>
+
+<body>
+    <header>
+        <h1>Alpher</h1>
+        <!-- Place inside your header, before or after <nav> -->
+        <button class="hamburger" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contacts</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="team">
+            <h2>Team</h2>
+            <p>Our team is composed of dedicated professionals with diverse backgrounds and expertise.</p>
+            <ul>
+                <li><a href="twale/index.html">Twale James M - Developer</a></li>
+            </ul>
+            <h2>Mission</h2>
+            <p>Our mission is to simplify complexity and improve lives through innovative software solutions. We believe
+                that technology should be accessible, intuitive, and empowering. We're committed to delivering
+                exceptional results that exceed our clients' expectations and make a lasting impact.</p>
+            <p>
+                At Alpher, we're passionate about harnessing the power of technology to drive innovation and
+                transform businesses. As a software development company, we specialize in creating cutting-edge
+                web and mobile applications that empower our clients to achieve their goals.<br>
+            </p>
+            <h2>Core</h2>
+            <p>*Innovation*: We stay ahead of the curve, embracing new technologies and methodologies to drive
+                innovation.</p>
+            <p>*Collaboration*: We work closely with our clients, partners, and team members to ensure successful
+                outcomes.</p>
+            <p>*Quality*: We're dedicated to delivering high-quality solutions that meet the highest standards of
+                excellence.</p>
+            <p>*Customer-centricity*: We put our clients at the heart of everything we do, ensuring their needs are met
+                and exceeded.</p>
+            <h2>The Birth</h2>
+            <p>Founded in 2025, Alpher(The former Seytrons) was born out of a vision to bridge the gap between
+                technology and
+                business. Our team of expert developers, designers, and strategists has a proven track record of
+                delivering high-quality software solutions that meet the unique needs of our clients.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Alpher Websites. All rights reserved.</p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
