@@ -1,0 +1,28 @@
+# AlpherTech Solutions Uganda - robots.txt
+# This file tells search engines which pages to crawl and which to avoid
+
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas (if any exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /internal/
+
+# Specific directives for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific directives for Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (optional - in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://alphertechnologies.com/sitemap.xml
+
+# Additional sitemaps if needed (optional)
+# Sitemap: https://alphertechnologies.com/blog-sitemap.xml
