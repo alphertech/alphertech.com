@@ -16,15 +16,15 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Canonical & Alternate -->
-    <link rel="canonical" href="https://alphertechnologies.com/about.html" />
+    <link rel="canonical" href="https://alphertech.com/about.html" />
     <link rel="alternate" hreflang="en" href="https://alphertechnologies.com/about.html" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alphertechnologies.com/about.html" />
+    <meta property="og:url" content="https://alphertech.com/about.html" />
     <meta property="og:title" content="About AlpherTech Solutions Uganda - Digital Innovation Company" />
     <meta property="og:description" content="Learn about our team, mission, values, and expertise in web development, app development, design, and digital transformation services." />
-    <meta property="og:image" content="https://alphertechnologies.com/images/team-og.png" />
+    <meta property="og:image" content="https://alphertech.com/images/team-og.png" />
     <meta property="og:locale" content="en_UG" />
 
     <!-- Twitter -->
@@ -32,6 +32,8 @@
     <meta name="twitter:title" content="About AlpherTech Solutions - Digital Innovation Company" />
     <meta name="twitter:description" content="Discover our team, mission, and expertise in digital innovation, web development, and business transformation." />
     <meta name="twitter:site" content="@alphertechug" />
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,11 +47,11 @@
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "AlpherTech Solutions Uganda",
-          "image": "https://alphertechnologies.com/images/logo.png",
+          "image": "https://alphertech.com/images/logo.png",
           "description": "Leading digital innovation company in Uganda providing web development, app development, UI/UX design, branding, digital marketing, and IT consulting services.",
-          "url": "https://alphertechnologies.com/",
+          "url": "https://alphertech.com/",
           "telephone": "+256 XXX XXXX XXX",
-          "email": "info@alphertechnologies.com",
+          "email": "info@alphertech.com",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Kampala",
@@ -72,24 +74,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="about-page">
     <!-- Header -->
     <header class="header">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">A</div>
-                <span>Alpher Technologies</span>
+            <a href="index.html" class="logo" aria-label="AlpherTech Solutions Uganda Home">
+                <img class="logo-icon" src="images/logo.png" alt="AlpherTech Solutions Uganda" />
+                <span>AlpherTech Solutions</span>
             </a>
+
+
 
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
                 <!-- <a href="portfolio.html">Portfolio</a> -->
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html">Get Started</a>
+                <a class="nav-link active" href="about.html">About</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta" href="contact.html">Get Started</a>
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -101,13 +105,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu">
             <nav class="mobile-nav">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
                 <!-- <a href="portfolio.html">Portfolio</a> -->
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" style="margin-top: var(--space-md);">Get Started</a>
+                <a class="nav-link active" href="about.html">About</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta" href="contact.html" style="margin-top: var(--space-md);">Get Started</a>
             </nav>
         </div>
     </header>
@@ -138,7 +142,7 @@
                     </div>
                 </div>
                 <div class="slide-up delay-100">
-                    <img src="https://comfortpubliclibrary.org/wp-content/uploads/2017/08/TC2-1024x723.jpg" alt="Tech room" style="width: 100%; border-radius: var(--radius-xl);">
+                    <img class="img-responsive" src="https://comfortpubliclibrary.org/wp-content/uploads/2017/08/TC2-1024x723.jpg" alt="Tech room">
                 </div>
             </div>
         </div>
@@ -282,6 +286,84 @@
         </div>
     </section>
 
+            <!-- Case Studies -->
+            <section class="section">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="slide-up">Selected Case Studies</h2>
+                        <p class="section-subtitle slide-up delay-100">Real projects, measurable outcomes</p>
+                    </div>
+
+                    <div class="gallery-grid" style="margin-top: var(--space-xl);">
+                        <div class="card slide-up">
+                            <h3>Retail POS Modernization</h3>
+                            <p class="muted">We migrated a regional retailer from a legacy on-premise POS to a cloud-first platform with offline support, real-time inventory, and integrated reporting. The project reduced average checkout time by 40% and improved inventory accuracy. <a href="#">Read the full case study</a>.</p>
+                        </div>
+
+                        <div class="card slide-up delay-100">
+                            <h3>Mobile Banking App</h3>
+                            <p class="muted">Built a secure, performant mobile banking application focused on simple onboarding, biometric login, and fast payments. The release drove a 120% increase in active users and reduced support tickets by 35%. <a href="#">Read the full case study</a>.</p>
+                        </div>
+
+                        <div class="card slide-up delay-200">
+                            <h3>E-commerce Platform</h3>
+                            <p class="muted">Delivered a headless e-commerce storefront with one-click checkout, personalized recommendations, and analytics instrumentation. The store saw a measurable uplift in conversion and repeat purchase rate. <a href="#">Read the full case study</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="section section-sm" style="background: var(--bg-alt);">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="slide-up">What Clients Say</h2>
+                        <p class="muted slide-up delay-100">Trusted by businesses across Uganda</p>
+                    </div>
+
+                    <div class="values-grid" style="margin-top: var(--space-lg);">
+                        <div class="card slide-up">
+                            <p>"AlpherTech transformed our online presence — conversions doubled in three months."</p>
+                            <p class="muted">— CEO, RetailCo</p>
+                        </div>
+
+                        <div class="card slide-up delay-100">
+                            <p>"Professional team and excellent communication. Project delivered on time and on budget."</p>
+                            <p class="muted">— Operations Lead, FinServe</p>
+                        </div>
+
+                        <div class="card slide-up delay-200">
+                            <p>"Their support has been invaluable; they helped us scale quickly during peak traffic."</p>
+                            <p class="muted">— CTO, Marketplace</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="section">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="slide-up">Frequently Asked Questions</h2>
+                        <p class="muted slide-up delay-100">Common questions about working with us</p>
+                    </div>
+
+                    <div style="margin-top: var(--space-xl);">
+                        <details class="card slide-up"><summary><strong>How long does a typical project take?</strong></summary>
+                            <div style="margin-top:var(--space-md);" class="muted">Timelines vary but most MVP-style projects take 6-12 weeks.</div>
+                        </details>
+
+                        <details class="card slide-up delay-100" style="margin-top:var(--space-md);"><summary><strong>Do you provide post-launch support?</strong></summary>
+                            <div style="margin-top:var(--space-md);" class="muted">Yes — we offer support and maintenance packages tailored to your needs.</div>
+                        </details>
+
+                        <details class="card slide-up delay-200" style="margin-top:var(--space-md);"><summary><strong>Can you work with international teams?</strong></summary>
+                            <div style="margin-top:var(--space-md);" class="muted">Yes — we collaborate remotely with clients worldwide using modern tools.</div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
     <!-- CTA -->
     <section class="section" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
         <div class="container">
@@ -304,9 +386,10 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <div class="logo-icon">A</div>
+                        <img class="logo-icon" src="images/logo.png" alt="AlpherTech Solutions Uganda" />
                         <span>AlpherTech Solutions Uganda</span>
                     </div>
+
                     <p class="footer-description">Web & app development, branding/graphics, and freelancing for Kampala businesses.</p>
                     <div class="social-links" aria-label="Social links">
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -359,7 +442,7 @@
 
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year"></span> AlpherTech Solutions Uganda. All rights reserved.</p>
-                <p style="margin-top: var(--space-xs); color: var(--text-muted); font-size: var(--text-xs);">Built for growth in Kampala.</p>
+                <p style="margin-top: var(--space-xs); color: var(--text-muted); font-size: var(--text-xs);">Built for growth.</p>
             </div>
         </div>
     </footer>

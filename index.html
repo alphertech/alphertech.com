@@ -19,28 +19,32 @@
     <meta name="revisit-after" content="7 days" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alphertechnologies.com/" />
-    <link rel="alternate" hreflang="en" href="https://alphertechnologies.com/" />
+    <link rel="canonical" href="https://alphertech.com/" />
+    <link rel="alternate" hreflang="en" href="https://alphertech.com/" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alphertechnologies.com/" />
+    <meta property="og:url" content="https://alphertech.com/" />
     <meta property="og:title" content="Web & App Development in Kampala Uganda | AlpherTech Solutions" />
     <meta property="og:description"
         content="Professional web development, mobile app creation, UI/UX design, and digital branding services in Kampala, Uganda." />
-    <meta property="og:image" content="https://alphertechnologies.com/images/og-image.png" />
+    <meta property="og:image" content="https://alphertech.com/images/og-image.png" />
     <meta property="og:site_name" content="AlpherTech Solutions Uganda" />
     <meta property="og:locale" content="en_UG" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://alphertechnologies.com/" />
+    <meta name="twitter:url" content="https://alphertech.com/" />
     <meta name="twitter:title" content="Web & App Development in Kampala Uganda | AlpherTech Solutions" />
     <meta name="twitter:description" content="Professional web development, mobile app creation, UI/UX design, and digital branding services in Kampala, Uganda." />
-    <meta name="twitter:image" content="https://alphertechnologies.com/images/twitter-image.png" />
+    <meta name="twitter:image" content="https://alphertech.com/images/twitter-image.png" />
     <meta name="twitter:site" content="@alphertechug" />
 
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
     <link rel="stylesheet" href="css/style.css" />
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,10 +59,10 @@
         {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "@id": "https://alphertechnologies.com/",
+          "@id": "https://alphertech.com/",
           "name": "AlpherTech Solutions Uganda",
           "description": "Professional web development, app development, and digital branding services in Kampala, Uganda.",
-          "url": "https://alphertechnologies.com/",
+          "url": "https://alphertech.com/",
           "telephone": "+256 708 885 123",
           "email": "alphertech@gmail.com",
           "address": {
@@ -84,7 +88,7 @@
           },
           "priceRange": "$$",
           "serviceType": ["Web Development", "App Development", "Digital Design", "UI/UX Design", "Branding", "Digital Marketing"],
-          "image": "https://alphertechnologies.com/images/og-image.png",
+          "image": "https://alphertech.com/images/og-image.png",
           "sameAs": [
             "https://www.facebook.com/alphertechug",
             "https://www.twitter.com/alphertechug",
@@ -98,14 +102,14 @@
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "url": "https://alphertechnologies.com/",
+          "url": "https://alphertech.com/",
           "name": "AlpherTech Solutions Uganda",
           "description": "Web development, app development, and digital branding services in Uganda",
           "potentialAction": {
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://alphertechnologies.com/search?q={search_term_string}"
+              "urlTemplate": "https://alphertech.com/search?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
           }
@@ -121,7 +125,7 @@
           "provider": {
             "@type": "LocalBusiness",
             "name": "AlpherTech Solutions Uganda",
-            "url": "https://alphertechnologies.com/"
+            "url": "https://alphertech.com/"
           },
           "areaServed": "UG",
           "availableLanguage": "en"
@@ -134,19 +138,20 @@
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="AlpherTech Solutions Uganda Home">
-                <div class="logo-icon">A</div>
-                <span>AlpherTech Solutions Uganda</span>
+                <img class="logo-icon" src="images/logo.png" alt="AlpherTech Solutions Uganda" />
+                <span>AlpherTech Solutions</span>
             </a>
+
 
             <!-- Desktop Navigation -->
             <nav class="nav-desktop" aria-label="Primary">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
                 <!-- <a href="portfolio.html">Portfolio</a> -->
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" class="nav-cta nav-cta-tight">Get Started</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta nav-cta-tight" href="contact.html">Get Started</a>
 
             </nav>
 
@@ -159,13 +164,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
             <nav class="mobile-nav" aria-label="Mobile">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
                 <!-- <a href="portfolio.html">Portfolio</a> -->
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" style="margin-top: var(--space-md);">Get Started</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta mt-md" href="contact.html">Get Started</a>
             </nav>
         </div>
     </header>
@@ -180,7 +185,7 @@
 
                 <div class="hero-stats" aria-label="Highlights">
                     <div class="stat">
-                        <span class="stat-number">50+</span>
+                        <span class="stat-number">10+</span>
                         <span class="stat-label">Projects Delivered</span>
                     </div>
                     <div class="stat">
@@ -192,6 +197,20 @@
                         <span class="stat-label">Support Available</span>
                     </div>
                 </div>
+
+                <div class="hero-additional" aria-label="Additional information">
+                    <p class="hero-additional-text">
+                        Built for businesses that want speed, clarity, and measurable results. From discovery to deployment,
+                        we handle design, development, and support with transparent communication.
+                    </p>
+                    <div class="hero-badges" aria-label="Service badges">
+                        <span class="badge-soft">UI/UX & Branding</span>
+                        <span class="badge-soft">Web + Mobile Development</span>
+                        <span class="badge-soft">SEO & Performance</span>
+                        <span class="badge-soft">Digital Support</span>
+                    </div>
+                </div>
+
 
                 <div class="hero-cta">
                     <a href="contact.html" class="btn btn-primary btn-lg">
@@ -224,7 +243,7 @@
                         <div class="service-item"><span>E-Commerce Solutions</span><span class="service-price">Full-Featured</span></div>
                         <div class="service-item"><span>Backend Integration</span><span class="service-price">Scalable</span></div>
                     </div>
-                    <a href="services.html" class="btn btn-outline" style="margin-top: var(--space-lg);">Learn More</a>
+                    <a href="services.html" class="btn btn-outline mt-lg">Learn More</a>
                 </div>
 
                 <div class="card service-card slide-up delay-100">
@@ -237,7 +256,7 @@
                         <div class="service-item"><span>Marketing Materials</span><span class="service-price">Polished</span></div>
                         <div class="service-item"><span>Brand Strategy</span><span class="service-price">Strategic</span></div>
                     </div>
-                    <a href="services.html" class="btn btn-outline" style="margin-top: var(--space-lg);">Learn More</a>
+                    <a href="services.html" class="btn btn-outline mt-lg">Learn More</a>
                 </div>
 
                 <div class="card service-card slide-up delay-200">
@@ -250,7 +269,7 @@
                         <div class="service-item"><span>Maintenance & Updates</span><span class="service-price">Ongoing</span></div>
                         <div class="service-item"><span>24/7 Support</span><span class="service-price">Available</span></div>
                     </div>
-                    <a href="contact.html" class="btn btn-outline" style="margin-top: var(--space-lg);">Get Support</a>
+                    <a href="contact.html" class="btn btn-outline mt-lg">Get Support</a>
                 </div>
             </div>
         </div>
@@ -266,7 +285,7 @@
 
             <div class="portfolio-grid">
                 <div class="card portfolio-item slide-up" data-category="web">
-<img src="images/web_design.jpg" alt="Web development project" class="portfolio-img" loading="lazy" />
+<img src="images/web_design.jpg" alt="Web development project" class="portfolio-img img-responsive" loading="lazy" />
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Web</span>
                         <h4>Modern Business Website</h4>
@@ -276,7 +295,7 @@
                 </div>
 
                 <div class="card portfolio-item slide-up delay-100" data-category="app">
-<img src="images/wide_screen.jpg" alt="Mobile app project" class="portfolio-img" loading="lazy" />
+<img src="images/wide_screen.jpg" alt="Mobile app project" class="portfolio-img img-responsive" loading="lazy" />
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">App</span>
                         <h4>Mobile App Build</h4>
@@ -286,7 +305,7 @@
                 </div>
 
                 <div class="card portfolio-item slide-up delay-200" data-category="branding">
-<img src="images/circuit_board.jpg" alt="Branding project" class="portfolio-img" loading="lazy" />
+<img src="images/circuit_board.jpg" alt="Branding project" class="portfolio-img img-responsive" loading="lazy" />
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Branding</span>
                         <h4>Logo & UI/UX Package</h4>
@@ -304,18 +323,48 @@
         </div>
     </section>
 
+    <!-- Business Impact -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="slide-up">Why Digital Transformation Matters</h2>
+                <p class="section-subtitle slide-up delay-100">A strong digital presence builds trust, improves efficiency, and turns data into actionable growth.</p>
+            </div>
+
+            <div class="values-grid" style="margin-top: var(--space-2xl);">
+                <div class="card slide-up">
+                    <h3>Customer Experience</h3>
+                    <p>Deliver seamless, user-focused digital journeys that increase engagement, retention, and conversions across desktop and mobile.</p>
+                </div>
+                <div class="card slide-up delay-100">
+                    <h3>Operational Efficiency</h3>
+                    <p>Automate manual workflows with custom software while improving speed, accuracy, and collaboration across your team.</p>
+                </div>
+                <div class="card slide-up delay-200">
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Capture the right metrics and use real-time reporting to make smarter decisions for your products, marketing, and growth.</p>
+                </div>
+            </div>
+
+            <div class="card slide-up delay-300" style="margin-top: var(--space-2xl);">
+                <p>AlpherTech helps businesses modernize legacy systems, launch intuitive digital products, and scale operations with confidence. Our team combines technical expertise with practical business understanding to deliver solutions that have measurable impact.</p>
+                <p style="margin-top: var(--space-md);">Whether you're launching a new web platform, improving internal workflows, or designing a stronger brand experience, we deliver work that is built for long-term success and real customer value.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
-    <section class="section" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);" aria-label="Client testimonials">
+    <section class="section bg-gradient-soft" aria-label="Client testimonials">
         <div class="container">
             <div class="text-center">
                 <h2 class="slide-up">What Our Clients Say</h2>
                 <p class="section-subtitle slide-up delay-100">Real feedback from businesses we've partnered with</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); margin-top: var(--space-2xl);">
+            <div class="testimonial-grid">
                 <div class="card slide-up">
-                    <div style="margin-bottom: var(--space-lg);">
-                        <div style="color: var(--primary); font-size: 1rem;">
+                    <div class="mb-lg">
+                        <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -323,9 +372,9 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p style="margin-bottom: var(--space-lg); font-style: italic;">"AlpherTech delivered exactly what we needed. Professional, responsive, and delivered on time. Highly recommended!"</p>
-                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
+                    <p class="mb-lg" style="font-style: italic;">"AlpherTech delivered exactly what we needed. Professional, responsive, and delivered on time. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-sm avatar-gradient-primary"></div>
                         <div>
                             <p style="margin: 0; font-weight: 600; color: var(--text-primary);">Sarah Mutesi</p>
                             <!-- <p style="margin: 0; font-size: var(--text-sm); color: var(--text-muted);">CEO, Tech Innovations Ltd</p> -->
@@ -334,8 +383,8 @@
                 </div>
 
                 <div class="card slide-up delay-100">
-                    <div style="margin-bottom: var(--space-lg);">
-                        <div style="color: var(--primary); font-size: 1rem;">
+                    <div class="mb-lg">
+                        <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -343,9 +392,9 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p style="margin-bottom: var(--space-lg); font-style: italic;">"Great communication, technical expertise, and attention to detail. They transformed our online presence."</p>
-                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--accent));"></div>
+                    <p class="mb-lg" style="font-style: italic;">"Great communication, technical expertise, and attention to detail. They transformed our online presence."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-sm avatar-gradient-secondary"></div>
                         <div>
                             <p style="margin: 0; font-weight: 600; color: var(--text-primary);">James Ochieng</p>
                             <!-- <p style="margin: 0; font-size: var(--text-sm); color: var(--text-muted);">Founder, Digital Marketing Co.</p> -->
@@ -354,8 +403,8 @@
                 </div>
 
                 <div class="card slide-up delay-200">
-                    <div style="margin-bottom: var(--space-lg);">
-                        <div style="color: var(--primary); font-size: 1rem;">
+                    <div class="mb-lg">
+                        <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -363,9 +412,9 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p style="margin-bottom: var(--space-lg); font-style: italic;">"The team went above and beyond. The app they built is intuitive and has increased our efficiency by 40%."</p>
-                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--primary));"></div>
+                    <p class="mb-lg" style="font-style: italic;">"The team went above and beyond. The app they built is intuitive and has increased our efficiency by 40%."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-sm avatar-gradient-accent"></div>
                         <div>
                             <p style="margin: 0; font-weight: 600; color: var(--text-primary);">Amina Kasim</p>
                             <!-- <p style="margin: 0; font-size: var(--text-sm); color: var(--text-muted);">Operations Manager, Retail Plus</p> -->
@@ -375,15 +424,15 @@
             </div>
         </div>
     </section>
-    <section class="section" style="background: linear-gradient(135deg, var(--primary), var(--secondary));" aria-label="Call to action">
+    <section class="section bg-gradient-primary" aria-label="Call to action">
         <div class="container">
             <div class="text-center">
-                <h2 class="slide-up" style="color: white; margin-bottom: var(--space-lg);">Ready to Transform Your Business?</h2>
-                <p class="slide-up delay-100" style="color: rgba(255,255,255,0.95); margin-bottom: var(--space-2xl); max-width: 650px; margin-left: auto; margin-right: auto; font-size: var(--text-lg);">
+                <h2 class="slide-up text-white mb-lg">Ready to Transform Your Business?</h2>
+                <p class="slide-up delay-100 text-white mb-2xl max-w-650 mx-auto" style="font-size: var(--text-lg);">
                     Let's discuss your project, goals, and vision. Our team is ready to help you build something amazing.
                 </p>
                 <div class="slide-up delay-200">
-                    <a href="https://wa.me/256708885123" target="_blank" rel="noopener noreferrer" class="btn btn-lg" style="background: white; color: var(--primary); font-weight: 700;">
+                    <a href="https://wa.me/256708885123" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-white-primary">
                         <i class="fas fa-arrow-right" aria-hidden="true"></i> Start Your Free Consultation
                     </a>
                 </div>
@@ -397,9 +446,10 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <div class="logo-icon">A</div>
+                        <img class="logo-icon" src="images/logo.png" alt="AlpherTech Solutions Uganda" />
                         <span>AlpherTech Solutions Uganda</span>
                     </div>
+
                     <p class="footer-description">Web & app development, branding/graphics, and freelancing for Kampala businesses.</p>
                     <div class="social-links" aria-label="Social links">
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -452,7 +502,7 @@
 
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year"></span> AlpherTech Solutions Uganda. All rights reserved.</p>
-                <p style="margin-top: var(--space-xs); color: var(--text-muted); font-size: var(--text-xs);">Built for growth in Kampala.</p>
+                <p style="margin-top: var(--space-xs); color: var(--text-muted); font-size: var(--text-xs);">Built for growth.</p>
             </div>
         </div>
     </footer>

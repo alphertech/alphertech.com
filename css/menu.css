@@ -1,29 +1,21 @@
-/* Menu-specific styles */
-.menu-wrapper {
-    display: flex;
-    align-items: center;
+/* Menu-specific styles (legacy)
+   NOTE: Current HTML uses classes from css/style.css (e.g. .nav-desktop, .mobile-menu-btn, .mobile-menu).
+   This file is kept for compatibility but should not override the main theme.
+*/
+.menu-wrapper,
+.nav-menu,
+.nav-item,
+.nav-link,
+.mobile-menu-toggle,
+.mobile-menu,
+.mobile-nav,
+.mobile-nav-item,
+.mobile-nav-link {
+    all: unset;
+    display: revert;
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
-.nav-item {
-    margin: 0 10px;
-}
-
-.nav-link {
-    color: var(--text);
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    font-size: 15px;
-}
 
 .nav-link:hover,
 .nav-link.active {

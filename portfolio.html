@@ -33,6 +33,8 @@
     <meta name="twitter:description" content="View our successful case studies and project portfolio showcasing web development, app development, and digital design expertise." />
     <meta name="twitter:site" content="@alphertechug" />
     
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,19 +69,20 @@
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">A</div>
+                <img class="logo-icon" src="images/logo.png" alt="Alpher Technologies" />
                 <span>Alpher Technologies</span>
             </a>
 
+
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html">Get Started</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
+                <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta" href="contact.html">Get Started</a>
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -91,13 +94,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu">
             <nav class="mobile-nav">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" style="margin-top: var(--space-md);">Get Started</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
+                <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta mt-md" href="contact.html">Get Started</a>
             </nav>
         </div>
     </header>
@@ -130,7 +133,7 @@
                 <!-- Project 1 -->
                 <div class="card portfolio-item slide-up" data-category="finance">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Finance Platform" class="portfolio-img">
+                        alt="Finance Platform" class="portfolio-img img-responsive">
                     <div class="portfolio-content">
                         <span class="portfolio-category">FinTech</span>
                         <h3>GreenQash Payment Platform</h3>
@@ -156,7 +159,7 @@
                 <!-- Project 2 -->
                 <div class="card portfolio-item slide-up delay-100" data-category="education">
                     <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Education Platform" class="portfolio-img">
+                        alt="Education Platform" class="portfolio-img img-responsive">
                     <div class="portfolio-content">
                         <span class="portfolio-category">Education</span>
                         <h3>EduLearn LMS</h3>
@@ -182,7 +185,7 @@
                 <!-- Project 3 -->
                 <div class="card portfolio-item slide-up delay-200" data-category="healthcare">
                     <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Healthcare System" class="portfolio-img">
+                        alt="Healthcare System" class="portfolio-img img-responsive">
                     <div class="portfolio-content">
                         <span class="portfolio-category">Healthcare</span>
                         <h3>MediCare HMS</h3>
@@ -208,7 +211,7 @@
                 <!-- Project 4 -->
                 <div class="card portfolio-item slide-up" data-category="ecommerce">
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="E-commerce Platform" class="portfolio-img">
+                        alt="E-commerce Platform" class="portfolio-img img-responsive">
                     <div class="portfolio-content">
                         <span class="portfolio-category">E-commerce</span>
                         <h3>ShopSmart Marketplace</h3>
@@ -234,7 +237,7 @@
                 <!-- Project 5 -->
                 <div class="card portfolio-item slide-up delay-100" data-category="government">
                     <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Government System" class="portfolio-img">
+                        alt="Government System" class="portfolio-img img-responsive">
                     <div class="portfolio-content">
                         <span class="portfolio-category">Government</span>
                         <h3>Citizen Services Portal</h3>
@@ -260,7 +263,7 @@
                 <!-- Project 6 -->
                 <div class="card portfolio-item slide-up delay-200" data-category="finance">
                     <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Banking System" class="portfolio-img">
+                        alt="Banking System" class="portfolio-img img-responsive">
                     <div class="portfolio-content">
                         <span class="portfolio-category">Banking</span>
                         <h3>Digital Banking Platform</h3>
@@ -335,9 +338,10 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <div class="logo-icon">A</div>
+                        <img class="logo-icon" src="images/logo.png" alt="AlpherTech Solutions Uganda" />
                         <span>AlpherTech Solutions Uganda</span>
                     </div>
+
                     <p class="footer-description">Web & app development, branding/graphics, and freelancing for Kampala businesses.</p>
                     <div class="social-links" aria-label="Social links">
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>

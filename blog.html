@@ -16,15 +16,15 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Canonical & Alternate -->
-    <link rel="canonical" href="https://alphertechnologies.com/blog.html" />
-    <link rel="alternate" hreflang="en" href="https://alphertechnologies.com/blog.html" />
+    <link rel="canonical" href="https://alphertech.com/blog.html" />
+    <link rel="alternate" hreflang="en" href="https://alphertech.com/blog.html" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alphertechnologies.com/blog.html" />
+    <meta property="og:url" content="https://alphertech.com/blog.html" />
     <meta property="og:title" content="Blog & Digital Insights | AlpherTech Solutions" />
     <meta property="og:description" content="Read latest articles on web development, digital transformation, and technology trends from industry experts." />
-    <meta property="og:image" content="https://alphertechnologies.com/images/blog-og.png" />
+    <meta property="og:image" content="https://alphertech.com/images/blog-og.png" />
     <meta property="og:locale" content="en_UG" />
 
     <!-- Twitter -->
@@ -32,6 +32,8 @@
     <meta name="twitter:title" content="Blog - Web Development & Digital Insights" />
     <meta name="twitter:description" content="Latest articles, tutorials, and industry insights on web development, digital marketing, and technology trends." />
     <meta name="twitter:site" content="@alphertechug" />
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,12 +47,12 @@
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Blog & Digital Insights",
-          "url": "https://alphertechnologies.com/blog.html",
+          "url": "https://alphertech.com/blog.html",
           "description": "Insights, tutorials, and industry news on web development, app development, digital marketing, UI/UX design, and technology trends.",
           "publisher": {
             "@type": "LocalBusiness",
             "name": "AlpherTech Solutions Uganda",
-            "url": "https://alphertechnologies.com/"
+            "url": "https://alphertech.com/"
           },
           "author": {
             "@type": "LocalBusiness",
@@ -70,19 +72,20 @@
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">A</div>
-                <span>Alpher Technologies</span>
+                <img class="logo-icon" src="images/logo.png" alt="Alpher Technologies" />
+                <span>AlpherTech Solutions</span>
             </a>
+
 
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
                 <!-- <a href="portfolio.html">Portfolio</a> -->
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html">Get Started</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta" href="contact.html">Get Started</a>
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -94,13 +97,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu">
             <nav class="mobile-nav">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="services.html">Services</a>
                 <!-- <a href="portfolio.html">Portfolio</a> -->
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" style="margin-top: var(--space-md);">Get Started</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" href="blog.html">Blog</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-cta" href="contact.html" style="margin-top: var(--space-md);">Get Started</a>
             </nav>
         </div>
     </header>
@@ -123,7 +126,7 @@
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
                 <article class="card blog-card slide-up">
-<img src="images/web_design.jpg" alt="Web Development" class="blog-img">
+<img src="images/web_design.jpg" alt="Web Development" class="blog-img img-responsive">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span class="blog-category">Web Development</span>
@@ -143,7 +146,7 @@
 
                 <!-- Blog Post 2 -->
                 <article class="card blog-card slide-up delay-100">
-<img src="images/wide_screen.jpg" alt="Cloud Computing" class="blog-img">
+<img src="images/wide_screen.jpg" alt="Cloud Computing" class="blog-img img-responsive">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span class="blog-category">Cloud Computing</span>
@@ -163,7 +166,7 @@
 
                 <!-- Blog Post 3 -->
                 <article class="card blog-card slide-up delay-200">
-<img src="images/circuit_board.jpg" alt="Cybersecurity" class="blog-img">
+<img src="images/circuit_board.jpg" alt="Cybersecurity" class="blog-img img-responsive">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span class="blog-category">Cybersecurity</span>
@@ -183,7 +186,7 @@
 
                 <!-- Blog Post 4 -->
                 <article class="card blog-card slide-up">
-<img src="images/web_design.jpg" alt="AI & ML" class="blog-img">
+<img src="images/web_design.jpg" alt="AI & ML" class="blog-img img-responsive">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span class="blog-category">Artificial Intelligence</span>
@@ -204,7 +207,7 @@
                 <!-- Blog Post 5 -->
                 <article class="card blog-card slide-up delay-100">
                     <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="UI/UX Design" class="blog-img">
+                        alt="UI/UX Design" class="blog-img img-responsive">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span class="blog-category">UI/UX Design</span>
@@ -225,7 +228,7 @@
                 <!-- Blog Post 6 -->
                 <article class="card blog-card slide-up delay-200">
                     <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Digital Transformation" class="blog-img">
+                        alt="Digital Transformation" class="blog-img img-responsive">
                     <div class="blog-content">
                         <div class="blog-meta">
                             <span class="blog-category">Digital Transformation</span>
@@ -237,6 +240,60 @@
                             A strategic guide to planning and implementing digital transformation initiatives that align
                             with business objectives and drive sustainable growth.
                         </p>
+                        <a href="#" class="btn btn-sm btn-outline" style="margin-top: var(--space-md);">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 7 -->
+                <article class="card blog-card slide-up delay-300">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Mobile marketing" class="blog-img img-responsive">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Marketing</span>
+                            <span><i class="far fa-calendar"></i> Feb 15, 2024</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h2>Building a Strong Brand Online</h2>
+                        <p class="blog-excerpt">How strong visual identity, consistent messaging, and digital credibility help businesses stand out and gain customer trust.</p>
+                        <a href="#" class="btn btn-sm btn-outline" style="margin-top: var(--space-md);">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 8 -->
+                <article class="card blog-card slide-up delay-400">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Team collaboration" class="blog-img img-responsive">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Collaboration</span>
+                            <span><i class="far fa-calendar"></i> Feb 22, 2024</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h2>Successful Remote Collaboration</h2>
+                        <p class="blog-excerpt">Best practices for working with remote teams, managing expectations, and keeping projects on track.</p>
+                        <a href="#" class="btn btn-sm btn-outline" style="margin-top: var(--space-md);">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 9 -->
+                <article class="card blog-card slide-up delay-500">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Productivity tools" class="blog-img img-responsive">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Productivity</span>
+                            <span><i class="far fa-calendar"></i> Mar 1, 2024</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h2>Tools for Smarter Business Operations</h2>
+                        <p class="blog-excerpt">A look at the best digital tools and workflows for improving team productivity and keeping your business organized.</p>
                         <a href="#" class="btn btn-sm btn-outline" style="margin-top: var(--space-md);">
                             Read More <i class="fas fa-arrow-right"></i>
                         </a>
@@ -292,9 +349,10 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <div class="logo-icon">A</div>
+                        <img class="logo-icon" src="images/logo.png" alt="AlpherTech Solutions Uganda" />
                         <span>AlpherTech Solutions Uganda</span>
                     </div>
+
                     <p class="footer-description">Web & app development, branding/graphics, and freelancing for Kampala businesses.</p>
                     <div class="social-links" aria-label="Social links">
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -347,7 +405,7 @@
 
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year"></span> AlpherTech Solutions Uganda. All rights reserved.</p>
-                <p style="margin-top: var(--space-xs); color: var(--text-muted); font-size: var(--text-xs);">Built for growth in Kampala.</p>
+                <p style="margin-top: var(--space-xs); color: var(--text-muted); font-size: var(--text-xs);">Built for growth.</p>
             </div>
         </div>
     </footer>

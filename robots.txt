@@ -22,7 +22,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://alphertechnologies.com/sitemap.xml
-
-# Additional sitemaps if needed (optional)
-# Sitemap: https://alphertechnologies.com/blog-sitemap.xml
+Sitemap: https://alphertech.com/sitemap.xml
