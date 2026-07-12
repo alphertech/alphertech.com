@@ -91,4 +91,15 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- =========================================================== -->
+    <!-- SEYTRONS LANDING PAGE - NEW TARGET                            -->
+    <!-- Keywords: seytrons, vpn, app, dseytrons apk, wifi kampala   -->
+    <!-- =========================================================== -->
+    <url>
+        <loc>https://alphertech.com/seytrons-landing/seytrons.html</loc>
+        <lastmod>2026-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
 </urlset>
