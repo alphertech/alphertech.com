@@ -1,105 +1,92 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-    <!-- =========================================================== -->
-    <!-- HOMEPAGE - HIGHEST PRIORITY                                  -->
-    <!-- Keywords: alphertech, tech, technology, Uganda businesses    -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- INDEX.HTML - REDIRECTS TO ROOT, BUT KEEP FOR SAFETY         -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/index.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- SERVICES PAGE - CORE BUSINESS OFFERINGS                      -->
-    <!-- Keywords: apps, websites, computing, graphics, developers    -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/services.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- PORTFOLIO PAGE - SHOWCASES WORK & EXPERTISE                  -->
-    <!-- Keywords: software engineers, developers, programming        -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/portfolio.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- ABOUT PAGE - COMPANY INFO & TEAM                            -->
-    <!-- Keywords: Twale James, engineers, Kampala, alphertech       -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/about.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- STORIES PAGE - TEAM HISTORY, JOURNEY & FOUNDING             -->
-    <!-- Keywords: Twale James, developers, computing, alphertech    -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/stories.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- BLOG PAGE - FRESH CONTENT, INSIGHTS & TUTORIALS             -->
-    <!-- Keywords: tech, developers, programming tips, alphertech    -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/blog.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- CONTACT PAGE - CONVERSION & BUSINESS INQUIRIES              -->
-    <!-- Keywords: Kampala, Uganda businesses, alphertech            -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/contact.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- =========================================================== -->
-    <!-- SEYTRONS LANDING PAGE - NEW TARGET                            -->
-    <!-- Keywords: seytrons, vpn, app, dseytrons apk, wifi kampala   -->
-    <!-- =========================================================== -->
-    <url>
-        <loc>https://alphertech.com/seytrons-landing/seytrons.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- =========================================================== -->
+  <!-- HOMEPAGE - HIGHEST PRIORITY                                  -->
+  <!-- Keywords: alphertech, tech, technology, Uganda businesses    -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- INDEX.HTML - REDIRECTS TO ROOT, BUT KEEP FOR SAFETY         -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/index.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- SERVICES PAGE - CORE BUSINESS OFFERINGS                      -->
+  <!-- Keywords: apps, websites, computing, graphics, developers    -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/services.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- PORTFOLIO PAGE - SHOWCASES WORK & EXPERTISE                  -->
+  <!-- Keywords: software engineers, developers, programming        -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/portfolio.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- ABOUT PAGE - COMPANY INFO & TEAM                            -->
+  <!-- Keywords: Twale James, engineers, Kampala, alphertech       -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/about.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- STORIES PAGE - TEAM HISTORY, JOURNEY & FOUNDING             -->
+  <!-- Keywords: Twale James, developers, computing, alphertech    -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/stories.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- BLOG PAGE - FRESH CONTENT, INSIGHTS & TUTORIALS             -->
+  <!-- Keywords: tech, developers, programming tips, alphertech    -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/blog.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- CONTACT PAGE - CONVERSION & BUSINESS INQUIRIES              -->
+  <!-- Keywords: Kampala, Uganda businesses, alphertech            -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/contact.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- =========================================================== -->
+  <!-- SEYTRONS LANDING PAGE - NEW TARGET                            -->
+  <!-- Keywords: seytrons, vpn, app, dseytrons apk, wifi kampala   -->
+  <!-- =========================================================== -->
+  <url>
+    <loc>https://alphertech.com/seytrons-landing/seytrons.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
