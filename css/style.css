@@ -971,23 +971,52 @@ a:hover {
     font-size: var(--text-2xl);
     box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
 }
+/* ---------- Team Section ---------- */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-lg);
+    gap: 1.5rem;
     margin-top: var(--space-2xl);
 }
 
-.team-card {
+/* All direct children of team-grid (including <a> tags) become identical flex column cards */
+.team-grid > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    border-radius: var(--radius-xl);
     padding: var(--space-2xl);
-}
-
-.team-member {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all var(--transition-base);
     position: relative;
+    overflow: hidden;
 }
 
-.member-avatar {
+.team-grid > *::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+}
+
+.team-grid > *:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(59, 130, 246, 0.35);
+    background: #ffffff;
+}
+
+/* Avatar - uniform circle for all team members */
+.team-avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -995,48 +1024,99 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto var(--space-lg);
     color: white;
     font-size: var(--text-2xl);
     font-weight: 700;
+    flex-shrink: 0;
+    margin: 0 0 1.25rem 0;
     box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
 }
 
-.member-role {
+/* Name */
+.team-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+}
+
+/* Role label */
+.team-role {
     color: var(--primary);
-    font-size: var(--text-sm);
+    font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: var(--space-sm);
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
-.member-bio {
+
+/* Bio */
+.team-bio {
     color: var(--text-secondary);
-    font-size: var(--text-sm);
-    margin-bottom: var(--space-lg);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+    flex: 1;
+    width: 100%;
+    display: block;
 }
 
-.member-social {
+/* Social icons row - horizontal layout */
+.team-social {
     display: flex;
+    flex-direction: row !important;
     justify-content: center;
-    gap: var(--space-sm);
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.75rem 0;
+    width: 100%;
 }
 
-.member-social a {
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.05);
+.team-social a {
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
-    display: flex;
+    background: rgba(37, 99, 235, 0.06);
+    display: inline-flex !important;
+    flex: none !important;
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
+    font-size: 0.85rem;
     transition: all var(--transition-fast);
 }
 
-.member-social a:hover {
+.team-social a:hover {
     background: var(--primary);
     color: white;
     transform: translateY(-2px);
+}
+
+/* CTA badge at bottom */
+.team-cta {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    width: 100%;
+    flex: none;
+}
+
+.team-cta span {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.team-grid > *:hover .team-cta span {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
 /* ---------- Contact ---------- */
@@ -1119,10 +1199,7 @@ a:hover {
     .img-card { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-md); display: block; }
     .avatar { width: 96px; height: 96px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight:700; background: var(--blue-50); color: var(--primary); }
 
-    /* ---------- Team Member ---------- */
-    .team-member .member-avatar { width: 84px; height: 84px; border-radius: 12px; display:flex;align-items:center;justify-content:center;font-weight:700;background:linear-gradient(135deg,var(--blue-50),var(--bg-alt));color:var(--primary);margin-bottom:var(--space-md); }
-    .team-member h3 { margin-bottom: var(--space-xs); }
-    .member-role { color: var(--text-muted); font-size: var(--text-sm); margin-bottom: var(--space-md); }
+/* ---------- Team Member ---------- */
 
     /* ---------- Footer ---------- */
     .footer { padding: var(--space-2xl) 0; background: linear-gradient(180deg, rgba(8, 12, 26, 0.98), rgba(12, 18, 45, 0.99)); border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.88); }
@@ -1191,8 +1268,8 @@ a:hover {
         /* Contact grid: single column on mobile */
         .contact-grid { grid-template-columns: 1fr !important; }
 
-        /* Reduce avatar sizes */
-        .team-member .member-avatar { width: 64px; height: 64px; border-radius: 10px; }
+/* Reduce avatar sizes */
+        .team-avatar { width: 64px; height: 64px; }
 
         /* Buttons and CTAs fit small layouts */
         .btn { width: auto; padding: 0.5rem 0.9rem; }

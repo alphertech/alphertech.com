@@ -168,7 +168,7 @@ function handleContactSubmit(form) {
     // Simulate API call
     setTimeout(() => {
         // Save to localStorage for demo
-        const messages = JSON.parse(localStorage.getItem('santiago_messages') || '[]');
+        const messages = JSON.parse(localStorage.getItem('alphertech_messages') || '[]');
         const newMessage = {
             id: Date.now(),
             ...data,
@@ -176,7 +176,7 @@ function handleContactSubmit(form) {
             status: 'unread'
         };
         messages.push(newMessage);
-        localStorage.setItem('santiago_messages', JSON.stringify(messages));
+        localStorage.setItem('alphertech_messages', JSON.stringify(messages));
         
         // Reset button
         submitBtn.textContent = originalText;
@@ -197,8 +197,8 @@ function handleContactSubmit(form) {
             `Message:\n${data.message}`
         )}`;
         
-        // Optional: uncomment to open email client
-        // window.open(mailtoLink, '_blank');
+        // Open email client as backup
+        window.open(mailtoLink, '_blank');
         
     }, 1500);
 }
@@ -218,10 +218,10 @@ function handleNewsletterSubmit(form) {
     }
     
     // Save to localStorage
-    const subscribers = JSON.parse(localStorage.getItem('santiago_newsletter') || '[]');
+    const subscribers = JSON.parse(localStorage.getItem('alphertech_newsletter') || '[]');
     if (!subscribers.includes(email)) {
         subscribers.push(email);
-        localStorage.setItem('santiago_newsletter', JSON.stringify(subscribers));
+        localStorage.setItem('alphertech_newsletter', JSON.stringify(subscribers));
     }
     
     showNotification('Thank you for subscribing to our newsletter!', 'success');
