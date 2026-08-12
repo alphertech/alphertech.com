@@ -363,61 +363,25 @@ function initPortfolio() {
     });
 }
 
-// Testimonials carousel
+// Testimonials animations
 function initTestimonials() {
-    const carousel = document.querySelector('.testimonials-carousel');
-    if (!carousel) return;
+    const cards = document.querySelectorAll('.testimonial-cards .card');
+    if (!cards.length) return;
     
-    const slides = carousel.querySelectorAll('.testimonial-slide');
-    const prevBtn = carousel.querySelector('.carousel-prev');
-    const nextBtn = carousel.querySelector('.carousel-next');
-    const dots = carousel.querySelectorAll('.carousel-dot');
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    
-    function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => {
-            slide.classList.remove('active');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
         });
-        
-        // Update dots
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        // Show current slide
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentSlide = index;
-    }
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     
-    // Next slide
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }
-    
-    // Previous slide
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(currentSlide);
-    }
-    
-    // Event listeners
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    
-    // Dot click events
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-        });
+    cards.forEach((card, index) => {
+        card.style.animation = `slideUp 0.6s ease ${index * 0.15}s forwards`;
+        card.style.animationPlayState = 'paused';
+        observer.observe(card);
     });
-    
-    // Auto slide every 5 seconds
-    setInterval(nextSlide, 5000);
 }
 
 // Pricing calculator
@@ -435,7 +399,10 @@ function initPricingCalculator() {
         'ecommerce': { base: 1200000, unit: 'store' },
         'software': { base: 2500000, unit: 'system' },
         'branding': { base: 300000, unit: 'package' },
-        'seo': { base: 200000, unit: 'month' }
+        'seo': { base: 200000, unit: 'month' },
+        'freelance': { base: 50000, unit: 'hour' },
+        'audit': { base: 1000000, unit: 'audit' },
+        'devops': { base: 800000, unit: 'setup' }
     };
     
     function calculateTotal() {

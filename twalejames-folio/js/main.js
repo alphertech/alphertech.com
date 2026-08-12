@@ -44,7 +44,7 @@ function initTypingAnimation() {
     const typedText = document.querySelector('.typed-text');
     if (!typedText) return;
 
-    const words = ['Graphics Designer', 'Web Developer', 'App Developer', 'Network Administrator'];
+    const words = ['a Graphics Designer', 'a Web Developer', 'an App Developer', 'a Network Administrator'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
