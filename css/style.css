@@ -516,14 +516,14 @@ a:hover {
     max-width: 760px;
     margin: 0 auto;
     padding: var(--space-xl) var(--space-xl);
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(14, 12, 12, 0.75);
     border: 1px solid rgba(37, 99, 235, 0.14);
     border-radius: var(--radius-2xl);
     backdrop-filter: blur(10px);
 }
 
 .hero-additional-text {
-    color: var(--text-secondary);
+    color: var(--primary-700);
     font-size: var(--text-base);
     margin-bottom: var(--space-lg);
 }
