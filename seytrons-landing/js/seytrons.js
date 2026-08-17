@@ -1,38 +1,61 @@
-// Seytrons landing page JS — compliance tab switcher.
-// Mobile menu, smooth scrolling, and the current year are handled
-// by the shared js/main.js so behaviour stays uniform across the site.
+// Seytrons — Interactions
 
-(function () {
-  const tabs = Array.from(document.querySelectorAll('.st-tab[data-tab]'));
-  const panels = Array.from(document.querySelectorAll('.st-tab-panel[id]'));
+(function() {
+  'use strict';
 
-  if (!tabs.length || !panels.length) return;
+  // ---------- Mobile Menu ----------
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
-  function activateTab(tabKey) {
-    tabs.forEach((t) => {
-      const isActive = t.getAttribute('data-tab') === tabKey;
-      t.classList.toggle('is-active', isActive);
-      t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
     });
-
-    panels.forEach((p) => {
-      const panelId = p.getAttribute('id');
-      const shouldShow = panelId === `st-panel-${tabKey}`;
-      p.classList.toggle('is-active', shouldShow);
-    });
-
-    const termsAnchor = document.querySelector('#terms');
-    if (termsAnchor && tabKey === 'terms') {
-      termsAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => activateTab(tab.getAttribute('data-tab')));
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+    });
   });
 
-  // Activate based on the current hash (e.g. opened on #terms / #release-notes)
-  const hash = (window.location.hash || '').replace('#', '');
-  if (hash === 'terms') activateTab('terms');
-  if (hash === 'release-notes') activateTab('releases');
+  // ---------- Smooth Scroll ----------
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ---------- Current Year ----------
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // ---------- Intersection Observer (animations) ----------
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-card, .step, .download-card, .faq-item').forEach(function(el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+
 })();
