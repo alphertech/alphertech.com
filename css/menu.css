@@ -20,7 +20,7 @@
 .nav-link:hover,
 .nav-link.active {
     color: var(--accent);
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(37, 99, 235, 0.10);
 }
 
 .mobile-menu-toggle {
@@ -36,7 +36,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--text);
+    background: var(--text-primary);
     position: relative;
     transition: all 0.3s ease;
 }
@@ -47,7 +47,7 @@
     position: absolute;
     width: 25px;
     height: 3px;
-    background: var(--text);
+    background: var(--text-primary);
     transition: all 0.3s ease;
 }
 
@@ -79,7 +79,7 @@
     top: 80px;
     left: 0;
     right: 0;
-    background: rgba(11, 18, 32, 0.98);
+    background: rgba(15, 23, 42, 0.98);
     backdrop-filter: blur(20px);
     padding: 20px;
     transform: translateY(-100%);
@@ -118,7 +118,7 @@
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
     color: var(--accent);
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(37, 99, 235, 0.10);
 }
 
 @media (max-width: 768px) {

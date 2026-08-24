@@ -50,12 +50,20 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- TWALE JAMES PORTFOLIO - Personal Portfolio Page -->
+   <!-- TWALE JAMES PORTFOLIO - Personal Portfolio Page -->
   <url>
     <loc>https://alphertech.com/twalejames-folio/index.html</loc>
     <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- JOIN US PAGE - Freelance & Remote Work Opportunities -->
+  <url>
+    <loc>https://alphertech.com/freelance_and_join.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

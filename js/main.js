@@ -139,11 +139,14 @@ function initForms() {
     }
 }
 
+function openMailto(mailtoLink) {
+    window.location.href = mailtoLink;
+}
+
 function handleContactSubmit(form) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     
-    // Validate required fields
     const required = ['name', 'email', 'message'];
     const missing = required.filter(field => !data[field]?.trim());
     
@@ -152,43 +155,23 @@ function handleContactSubmit(form) {
         return;
     }
     
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
         showNotification('Please enter a valid email address', 'error');
         return;
     }
     
-    // Show loading state
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
     
-    // Simulate API call
     setTimeout(() => {
-        // Save to localStorage for demo
-        const messages = JSON.parse(localStorage.getItem('alphertech_messages') || '[]');
-        const newMessage = {
-            id: Date.now(),
-            ...data,
-            timestamp: new Date().toISOString(),
-            status: 'unread'
-        };
-        messages.push(newMessage);
-        localStorage.setItem('alphertech_messages', JSON.stringify(messages));
-        
-        // Reset button
+        showNotification('Thank you! Your message has been sent successfully.', 'success');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-        
-        // Show success
-        showNotification('Thank you! Your message has been sent successfully.', 'success');
-        
-        // Reset form
         form.reset();
         
-        // Open email client as backup
         const mailtoLink = `mailto:alphertech@gmail.com?subject=${encodeURIComponent(data.subject || 'Contact Form Submission')}&body=${encodeURIComponent(
             `Name: ${data.name}\n` +
             `Email: ${data.email}\n` +
@@ -197,9 +180,7 @@ function handleContactSubmit(form) {
             `Message:\n${data.message}`
         )}`;
         
-        // Open email client as backup
-        window.open(mailtoLink, '_blank');
-        
+        openMailto(mailtoLink);
     }, 1500);
 }
 
@@ -217,15 +198,11 @@ function handleNewsletterSubmit(form) {
         return;
     }
     
-    // Save to localStorage
-    const subscribers = JSON.parse(localStorage.getItem('alphertech_newsletter') || '[]');
-    if (!subscribers.includes(email)) {
-        subscribers.push(email);
-        localStorage.setItem('alphertech_newsletter', JSON.stringify(subscribers));
-    }
-    
     showNotification('Thank you for subscribing to our newsletter!', 'success');
     form.reset();
+    
+    const mailtoLink = `mailto:alphertech@gmail.com?subject=${encodeURIComponent('Newsletter Subscription')}&body=${encodeURIComponent(`New newsletter subscription:\nEmail: ${email}`)}`;
+    openMailto(mailtoLink);
 }
 
 // Notification system
@@ -434,6 +411,62 @@ function initPricingCalculator() {
     serviceSelect.addEventListener('change', calculateTotal);
     quantityInput.addEventListener('input', calculateTotal);
     durationSelect.addEventListener('change', calculateTotal);
+    
+    const submitBtn = calculator.querySelector('#pricingSubmitBtn');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            const service = serviceSelect.value;
+            
+            if (!service) {
+                showNotification('Please select a service', 'error');
+                e.preventDefault();
+                return;
+            }
+            
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const quantity = parseInt(quantityInput.value) || 1;
+            const duration = parseInt(durationInput.value) || 1;
+            const total = totalElement.textContent;
+            const durationText = duration > 1 ? `${duration} Months` : '1 Month';
+            
+            const serviceNameField = calculator.querySelector('#serviceName');
+            const quantityField = calculator.querySelector('#quantityHidden');
+            const durationField = calculator.querySelector('#durationHidden');
+            const costField = calculator.querySelector('#estimatedCostHidden');
+            
+            if (serviceNameField) serviceNameField.value = serviceName;
+            if (quantityField) quantityField.value = quantity;
+            if (durationField) durationField.value = durationText;
+            if (costField) costField.value = total;
+        });
+    }
+    
+    calculator.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const service = serviceSelect.value;
+        if (!service) {
+            showNotification('Please select a service', 'error');
+            return;
+        }
+        
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const quantity = parseInt(quantityInput.value) || 1;
+        const duration = parseInt(durationInput.value) || 1;
+        const total = totalElement.textContent;
+        const durationText = duration > 1 ? `${duration} Months` : '1 Month';
+        
+        const mailtoLink = `mailto:alphertech@gmail.com?subject=${encodeURIComponent('Pricing Quote Request')}&body=${encodeURIComponent(
+            `Pricing Quote Request\n` +
+            `Service: ${serviceName}\n` +
+            `Quantity/Scale: ${quantity}\n` +
+            `Duration: ${durationText}\n` +
+            `Estimated Cost: ${total}\n\n` +
+            `Please contact me with a detailed quote and timeline.`
+        )}`;
+        
+        openMailto(mailtoLink);
+    });
     
     // Initial calculation
     calculateTotal();

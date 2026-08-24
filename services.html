@@ -189,6 +189,7 @@
                 <a class="nav-link" href="blog.html">Blog</a>
                 <a class="nav-link" href="contact.html">Contact</a>
                 <a class="nav-link" href="seytrons-landing/seytrons.html">Seytrons</a>
+                <a class="nav-link" href="freelance_and_join.html">Join Us</a>
                 <a class="nav-cta" href="contact.html">Get Started</a>
 
             </nav>
@@ -209,6 +210,7 @@
                 <a class="nav-link" href="blog.html">Blog</a>
                 <a class="nav-link" href="contact.html">Contact</a>
                 <a class="nav-link" href="seytrons-landing/seytrons.html">Seytrons</a>
+                <a class="nav-link" href="freelance_and_join.html">Join Us</a>
                 <a class="nav-cta mt-md" href="contact.html">Get Started</a>
 
             </nav>
@@ -216,7 +218,7 @@
     </header>
 
     <!-- Services Hero -->
-    <section class="section-lg">
+    <section class="section-lg page-hero">
         <div class="container">
             <div class="services-hero">
                 <div class="services-hero-text">
@@ -232,8 +234,8 @@
                 </div>
                 <div class="vid-sec">
                     <video src="vids/services.mp4" autoplay muted loop playsinline></video>
-                    <video src="vids/vid2.mp4" autoplay muted loop playsinline></video>
-                    <video src="vids/vid3.mp4" autoplay muted loop playsinline></video>
+                    <!-- <video src="vids/vid2.mp4" autoplay muted loop playsinline></video>
+                    <video src="vids/vid3.mp4" autoplay muted loop playsinline></video> -->
                 </div>
             </div>
         </div>
@@ -669,8 +671,13 @@
                         <div class="price-amount" id="totalPrice">UGX 0</div>
                     </div>
 
+                    <input type="hidden" name="service_name" id="serviceName">
+                    <input type="hidden" name="quantity" id="quantityHidden">
+                    <input type="hidden" name="duration" id="durationHidden">
+                    <input type="hidden" name="estimated_cost" id="estimatedCostHidden">
+
                     <div class="text-center">
-                        <button type="button" onclick="window.location.href='contact.html'"
+                        <button type="submit" id="pricingSubmitBtn"
                             class="btn btn-primary btn-lg">
                             <i class="fas fa-paper-plane"></i> Get Detailed Quote
                         </button>
@@ -767,6 +774,7 @@
                         <a href="blog.html">Blog</a>
                         <a href="contact.html">Contact</a>
                         <a href="seytrons-landing/seytrons.html">Seytrons</a>
+                        <a href="freelance_and_join.html">Join Us</a>
 
                     </div>
                 </div>
