@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Mobile Products Dropdown Toggle
+    const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+    if (mobileDropdownToggle) {
+        mobileDropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.closest('.mobile-dropdown');
+            parent.classList.toggle('active');
+            const isExpanded = parent.classList.contains('active');
+            this.setAttribute('aria-expanded', isExpanded);
+        });
+    }
     
     // Header scroll effect with enhanced detection
     const header = document.querySelector('.header');

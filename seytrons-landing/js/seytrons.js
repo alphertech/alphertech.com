@@ -20,6 +20,18 @@
     });
   });
 
+  // ---------- Mobile Products Dropdown Toggle ----------
+  const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+  if (mobileDropdownToggle) {
+    mobileDropdownToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = this.closest('.mobile-dropdown');
+      parent.classList.toggle('active');
+      const isExpanded = parent.classList.contains('active');
+      this.setAttribute('aria-expanded', isExpanded);
+    });
+  }
+
   // ---------- Smooth Scroll ----------
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
