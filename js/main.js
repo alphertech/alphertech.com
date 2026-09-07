@@ -108,7 +108,138 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Lazy loading for images
     initLazyLoading();
+
+    // Plexus product showcase slider
+    initPlexusSlider();
 });
+
+// Plexus Product Showcase Slider (fade in/out, random order)
+function initPlexusSlider() {
+    const slider = document.getElementById('plexusSliderTrack');
+    const dotsContainer = document.getElementById('plexusSliderDots');
+    if (!slider) return;
+
+    const slides = Array.from(slider.querySelectorAll('.plexus-slide'));
+    if (slides.length === 0) return;
+
+    // Hide all slides initially
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+        slide.style.opacity = '0';
+    });
+
+    let currentIndex = -1;
+    let order = [];
+    let autoplayInterval;
+
+    // Build a randomized order of indices (no immediate repeat)
+    function buildRandomOrder() {
+        const indices = slides.map((_, i) => i);
+        // Fisher-Yates shuffle
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+        // Ensure first item isn't the same as last shown
+        if (order.length > 0 && indices[0] === order[order.length - 1]) {
+            // swap first with a random other position
+            const swapIdx = 1 + Math.floor(Math.random() * (indices.length - 1));
+            [indices[0], indices[swapIdx]] = [indices[swapIdx], indices[0]];
+        }
+        order = indices;
+    }
+
+    function showSlide(index) {
+        const slideIndex = order[index];
+        slides.forEach((slide, i) => {
+            if (i === slideIndex) {
+                slide.classList.add('active');
+                slide.style.opacity = '1';
+            } else {
+                slide.classList.remove('active');
+                slide.style.opacity = '0';
+            }
+        });
+
+        // Update active dot
+        const dots = dotsContainer.querySelectorAll('button');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === slideIndex);
+        });
+    }
+
+    function nextRandomSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        if (currentIndex === 0) {
+            buildRandomOrder();
+        }
+        showSlide(currentIndex);
+        resetAutoplay();
+    }
+
+    function resetAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
+        autoplayInterval = setInterval(nextRandomSlide, 3500);
+    }
+
+    // Create dots (one per image)
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Show image ${index + 1}`);
+        dot.addEventListener('click', () => {
+            // Jump to that image directly
+            const slideIndex = order.indexOf(index);
+            if (slideIndex !== -1) {
+                currentIndex = slideIndex;
+            } else {
+                // Rebuild order starting with this index
+                buildRandomOrder();
+                // Move clicked index to front
+                const pos = order.indexOf(index);
+                [order[0], order[pos]] = [order[pos], order[0]];
+                currentIndex = 0;
+            }
+            showSlide(currentIndex);
+            resetAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    // Initialize: build order and show first
+    buildRandomOrder();
+    showSlide(0);
+
+    // Pause autoplay on hover
+    slider.addEventListener('mouseenter', () => {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+    });
+
+    dotsContainer.addEventListener('mouseenter', () => {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+    });
+
+    // Start autoplay
+    resetAutoplay();
+
+    // Reveal on scroll - observe the outer slider container
+    const sliderContainer = slider.closest('.plexus-showcase-slider');
+    if (sliderContainer) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('hidden');
+                    observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.add('hidden');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(sliderContainer);
+    }
+}
 
 // Animations
 function initAnimations() {
