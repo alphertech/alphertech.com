@@ -588,7 +588,7 @@
                     <h2>Download Plexus POS System</h2>
                     <p>Get the best Point of Sale software for your business. Plexus helps you manage inventory, track sales, monitor expenses, and generate professional reports — all with 100% local data storage.</p>
                     <div class="callout warning"><p><strong>Security Notice:</strong> AlpherTech will never contact you first via phone. Always download from official sources only.</p></div>
-                    <div class="callout error"><p><strong>Under Construction:</strong> Currently, only Windows v3.2.0 is available. Other platforms are under development. There will be no Linux version.</p></div>
+                    <div class="callout error"><p><strong>Platform Availability:</strong> Windows v3.2.0 is available now. The iOS version is coming soon.</p></div>
                     <div class="download-grid">
                         <a href="Plexus_Setup_v3.2.exe" class="download-card">
                             <div class="ico"><i class="fab fa-windows"></i></div>
@@ -596,10 +596,7 @@
                             <p>Inno Setup installer for Windows 10/11 (64-bit). Includes VC++ Redistributable.</p>
                             <div class="meta"><span>Plexus_Setup_v3.2.exe</span><span>~85 MB</span></div>
                         </a>
-                        <div class="download-card soon"><div class="ico"><i class="fab fa-apple"></i></div><h4>macOS</h4><p>Native build for macOS 12+ (Intel & Apple Silicon).</p><div class="meta"><span>Plexus_v3.2.dmg</span><span>~90 MB</span></div></div>
-                        <div class="download-card soon"><div class="ico"><i class="fab fa-android"></i></div><h4>Android</h4><p>APK for Android 8.0+ (ARM64). For tablets and mobile POS.</p><div class="meta"><span>Plexus_v3.2.apk</span><span>~45 MB</span></div></div>
-                        <div class="download-card soon"><div class="ico"><i class="fab fa-apple"></i></div><h4>iOS</h4><p>IPA for iOS 15+. TestFlight or enterprise distribution.</p><div class="meta"><span>Plexus_v3.2.ipa</span><span>~50 MB</span></div></div>
-                        <div class="download-card soon"><div class="ico"><i class="fas fa-globe"></i></div><h4>Web App</h4><p>Progressive Web App. Runs in any modern browser.</p><div class="meta"><span>plexus.app</span><span>Online</span></div></div>
+                        <div class="download-card soon"><div class="ico"><i class="fab fa-apple"></i></div><h4>iOS</h4><p>The iOS version is coming soon.</p><div class="meta"><span>macOS</span><span>Coming Soon</span></div></div>
                     </div>
                 </div>
                 <div class="panel-card">
@@ -732,7 +729,7 @@
                         <div class="req-item"><h5>Display</h5><p>1280×720 minimum, 1920×1080 recommended</p></div>
                         <div class="req-item"><h5>Prerequisites</h5><p>Visual C++ Redistributable (bundled)</p></div>
                     </div>
-                    <div class="callout error" style="margin-top: 16px;"><p><strong>Platform Availability:</strong> Currently, only Windows is supported. macOS, Android, and iOS versions are under development. There will be no Linux version.</p></div>
+                    <div class="callout error" style="margin-top: 16px;"><p><strong>Platform Availability:</strong> Windows is available now. The iOS version is coming soon. No other platforms are currently available.</p></div>
                 </div>
                 <div class="panel-card">
                     <h2>Technology Stack</h2>
@@ -775,7 +772,7 @@
             <section id="p-architecture" class="plexus-panel">
                 <div class="panel-card">
                     <h2>2. Architecture &amp; Technology</h2>
-                    <p>Plexus is built with <strong>Flutter</strong> for a native desktop experience on Windows (with iOS, Android, macOS, and Linux supported). Data is stored locally in a <strong>SQLite</strong> database via the <code>sqflite</code> plugin, with <strong>Provider</strong> for state management.</p>
+                    <p>Plexus is built with <strong>Flutter</strong> for a native desktop experience on Windows. An iOS version is planned for the future. Data is stored locally in a <strong>SQLite</strong> database via the <code>sqflite</code> plugin, with <strong>Provider</strong> for state management.</p>
                     <h3>Core Libraries</h3>
                     <table>
                         <tr><th>Library</th><th>Purpose</th></tr>
@@ -1354,10 +1351,8 @@
             const ua = navigator.userAgent;
             let osName = 'Unknown OS', osIcon = 'fa-desktop', rec = '';
             if (ua.indexOf('Win') !== -1)        { osName='Windows'; osIcon='fa-windows'; rec='Windows Installer (v3.2.0) — Download now!'; }
-            else if (ua.indexOf('Mac') !== -1)   { osName='macOS';   osIcon='fa-apple';   rec='macOS version is under development. Please check back later or use the Web App.'; }
-            else if (ua.indexOf('Linux') !== -1) { osName='Linux';   osIcon='fa-linux';   rec='Linux is not supported. Plexus is built for Windows and mobile platforms only.'; }
-            else if (ua.indexOf('Android') !== -1){ osName='Android'; osIcon='fa-android'; rec='Android version is under development. Please check back later or use the Web App.'; }
-            else if (ua.indexOf('iOS') !== -1 || ua.indexOf('iPhone') !== -1 || ua.indexOf('iPad') !== -1) { osName='iOS'; osIcon='fa-apple'; rec='iOS version is under development. Please check back later or use the Web App.'; }
+            else if (ua.indexOf('iOS') !== -1 || ua.indexOf('iPhone') !== -1 || ua.indexOf('iPad') !== -1) { osName='iOS'; osIcon='fa-apple'; rec='iOS version is coming soon.'; }
+            else                                  { osName='Other OS'; osIcon='fa-desktop'; rec='Plexus is currently available for Windows. iOS coming soon.'; }
 
             detectedOsEl.innerHTML = `<i class="fab ${osIcon}"></i> ${osName} detected`;
             if (rec) { recommendationEl.classList.add('show'); recommendedVersionEl.textContent = rec; }

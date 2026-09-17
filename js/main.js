@@ -1,4 +1,4 @@
-// AlpherTech Solutions - Professional Website JavaScript
+// AlpherTech Solutions
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize current year
