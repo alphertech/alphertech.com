@@ -1,5 +1,7 @@
 // AlpherTech Solutions
 
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize current year
     const currentYear = document.getElementById('current-year');
@@ -96,6 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize animations
     initAnimations();
+    initHeroCounters();
+    initHeroMotion();
     
     // Form handling
     initForms();
@@ -120,7 +124,7 @@ function initPlexusSlider() {
     if (!slider) return;
 
     const slides = Array.from(slider.querySelectorAll('.plexus-slide'));
-    if (slides.length === 0) return;
+    if (slides.length === 0 || !dotsContainer) return;
 
     // Hide all slides initially
     slides.forEach(slide => {
@@ -131,6 +135,7 @@ function initPlexusSlider() {
     let currentIndex = -1;
     let order = [];
     let autoplayInterval;
+    let autoplayPaused = false;
 
     // Build a randomized order of indices (no immediate repeat)
     function buildRandomOrder() {
@@ -177,11 +182,27 @@ function initPlexusSlider() {
         resetAutoplay();
     }
 
+    function pauseAutoplay() {
+        autoplayPaused = true;
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    function resumeAutoplay() {
+        autoplayPaused = false;
+        resetAutoplay();
+    }
+
     function resetAutoplay() {
         if (autoplayInterval) {
             clearInterval(autoplayInterval);
+            autoplayInterval = null;
         }
-        autoplayInterval = setInterval(nextRandomSlide, 3500);
+        if (!autoplayPaused && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            autoplayInterval = setInterval(nextRandomSlide, 3500);
+        }
     }
 
     // Create dots (one per image)
@@ -211,13 +232,37 @@ function initPlexusSlider() {
     buildRandomOrder();
     showSlide(0);
 
-    // Pause autoplay on hover
+    // Pause autoplay when the showcase is not being viewed
     slider.addEventListener('mouseenter', () => {
-        if (autoplayInterval) clearInterval(autoplayInterval);
+        pauseAutoplay();
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        resumeAutoplay();
+    });
+
+    slider.addEventListener('focusin', () => {
+        pauseAutoplay();
+    });
+
+    slider.addEventListener('focusout', () => {
+        resumeAutoplay();
     });
 
     dotsContainer.addEventListener('mouseenter', () => {
-        if (autoplayInterval) clearInterval(autoplayInterval);
+        pauseAutoplay();
+    });
+
+    dotsContainer.addEventListener('mouseleave', () => {
+        resumeAutoplay();
+    });
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            pauseAutoplay();
+        } else {
+            resumeAutoplay();
+        }
     });
 
     // Start autoplay
@@ -243,6 +288,12 @@ function initPlexusSlider() {
 
 // Animations
 function initAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
+    if (!('IntersectionObserver' in window)) {
+        animatedElements.forEach(el => el.classList.add('animated'));
+        return;
+    }
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -252,14 +303,107 @@ function initAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    document.querySelectorAll('.fade-in, .slide-up').forEach(el => {
+    animatedElements.forEach(el => {
         observer.observe(el);
     });
+}
+
+function initHeroCounters() {
+    const counters = document.querySelectorAll('.stat-number[data-count]');
+    if (counters.length === 0) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animateCounter = (element) => {
+        const target = Number(element.dataset.count) || 0;
+        const suffix = element.dataset.suffix || '';
+        if (reduceMotion) {
+            element.textContent = `${target}${suffix}`;
+            return;
+        }
+
+        const duration = 1400;
+        const startTime = performance.now();
+        const updateCounter = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            element.textContent = `${Math.round(target * easedProgress)}${suffix}`;
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        };
+        requestAnimationFrame(updateCounter);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        counters.forEach(counter => animateCounter(counter));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.45 });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function initHeroMotion() {
+    const hero = document.querySelector('.hero');
+    const motionLayer = document.querySelector('.hero-motion');
+    if (!hero || !motionLayer) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    let frameId = null;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    const renderMotion = () => {
+        currentX += (targetX - currentX) * 0.075;
+        currentY += (targetY - currentY) * 0.075;
+        motionLayer.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0)`;
+
+        if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+            frameId = requestAnimationFrame(renderMotion);
+        } else {
+            frameId = null;
+        }
+    };
+
+    const queueMotion = () => {
+        if (!frameId) {
+            frameId = requestAnimationFrame(renderMotion);
+        }
+    };
+
+    hero.addEventListener('pointermove', (event) => {
+        const bounds = hero.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        targetX = x * 18;
+        targetY = y * 12;
+        queueMotion();
+    });
+
+    hero.addEventListener('pointerleave', () => {
+        targetX = 0;
+        targetY = 0;
+        queueMotion();
+    });
+
+    window.addEventListener('scroll', queueMotion, { passive: true });
 }
 
 // Form handling
@@ -568,7 +712,7 @@ function initPricingCalculator() {
             
             const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
             const quantity = parseInt(quantityInput.value) || 1;
-            const duration = parseInt(durationInput.value) || 1;
+            const duration = parseInt(durationSelect.value) || 1;
             const total = totalElement.textContent;
             const durationText = duration > 1 ? `${duration} Months` : '1 Month';
             
@@ -595,7 +739,7 @@ function initPricingCalculator() {
         
         const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
         const quantity = parseInt(quantityInput.value) || 1;
-        const duration = parseInt(durationInput.value) || 1;
+        const duration = parseInt(durationSelect.value) || 1;
         const total = totalElement.textContent;
         const durationText = duration > 1 ? `${duration} Months` : '1 Month';
         
